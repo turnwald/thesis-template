@@ -1,0 +1,38 @@
+\chapter{Methodology}
+\label{chap:methods}
+
+This chapter describes the methods employed to address the problem formulated in Chapter~\ref{chap:background}. The focus lies on the underlying assumptions, design choices, and implementation aspects.
+
+\section{Problem Formulation}
+
+The considered problem is formulated in a structured manner, allowing the systematic application of analytical or computational methods. A clear formulation is essential to ensure reproducibility and meaningful interpretation of results.
+
+\section{Proposed Approach}
+
+The overall approach followed in this thesis is summarized in Figure~\ref{fig:method_pipeline}. It consists of several stages, ranging from data acquisition or modeling to evaluation.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.9\textwidth]{fig/blk.png}
+	\caption{Overview of the proposed methodological pipeline.}
+	\label{fig:method_pipeline}
+\end{figure}
+
+\section{Implementation Details}
+
+Key implementation aspects and parameter choices are summarized in Table~\ref{tab:parameters}. These values are used consistently throughout the remainder of this thesis unless stated otherwise.
+
+\begin{table}[ht]
+	\centering
+	\caption{Overview of main parameters used in the proposed approach.}
+	\label{tab:parameters}
+	\begin{tabular}{lcc}
+		\toprule
+		Parameter & Symbol & Value \\
+		\midrule
+		Sampling time & $T_s$ & 0.1\,s \\
+		Horizon length & $N$ & 20 \\
+		State dimension & $n_x$ & 6 \\
+		\bottomrule
+	\end{tabular}
+\end{table}

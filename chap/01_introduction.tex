@@ -1,0 +1,53 @@
+\chapter{Introduction}
+
+\section{Motivation}
+
+Modern engineering systems are increasingly characterized by high complexity, tight performance requirements, and strong interactions between physical processes, software, and data-driven components. Examples range from autonomous robotic systems and advanced manufacturing processes to energy systems and aerospace applications.
+
+In such contexts, classical engineering approaches based on simplified models often reach their limits. At the same time, purely data-driven methods may lack interpretability, robustness, or guarantees on system behavior. As a result, contemporary research and development increasingly aim at combining model-based reasoning with data-driven techniques in a principled manner.
+
+This thesis is motivated by the need for systematic methods that enable the analysis, design, and evaluation of complex technical systems under realistic constraints, while maintaining transparency and reproducibility.
+
+\section{Problem Statement}
+
+The central problem addressed in this thesis can be summarized as follows:
+
+\begin{quote}
+	How can a given engineering problem be formulated, analyzed, and solved using scientifically sound methods such that the resulting solution is both effective and verifiable?
+\end{quote}
+
+Depending on the specific application, this problem may involve aspects such as system modeling, algorithm design, experimental validation, or performance evaluation. A key challenge lies in selecting appropriate assumptions and methods while clearly stating their limitations.
+
+To illustrate this, consider a generic system description of the form
+\begin{equation}
+	x_{k+1} = f(x_k, u_k),
+	\label{eq:system}
+\end{equation}
+where $x_k$ denotes the system state and $u_k$ the control input at discrete time step $k$. Even for such a compact representation, the choice of the function $f(\cdot)$, the underlying assumptions, and the available measurements have a decisive impact on the achievable results.
+
+\section{Objectives and Contributions}
+
+The primary objective of this thesis is to investigate the stated problem in a structured and reproducible manner. Specifically, the following contributions are pursued:
+
+\begin{itemize}
+	\item formulation of the problem within a clear theoretical or conceptual framework,
+	\item development or application of suitable methods to address the problem,
+	\item evaluation of the proposed approach using simulations, experiments, or case studies,
+	\item critical discussion of the obtained results, including limitations and possible extensions.
+\end{itemize}
+
+Rather than claiming universal validity, the focus lies on a transparent presentation of assumptions and a critical assessment of the proposed solution.
+
+\section{Methodological Approach}
+
+The methodological approach adopted in this thesis follows established principles of scientific work. Relevant literature is reviewed to place the addressed problem in context and to identify existing solutions and open challenges \cite{Rawlings2017MPC,Brunton2016Koopman}.
+
+Based on this foundation, appropriate methods are selected and adapted to the problem at hand. Where applicable, theoretical considerations are complemented by numerical simulations or experimental investigations in order to assess practical feasibility and performance.
+
+Throughout the thesis, emphasis is placed on reproducibility. Models, parameters, and evaluation criteria are described in sufficient detail to allow an informed reader to follow and assess the presented results.
+
+\section{Structure of the Thesis}
+
+The remainder of this thesis is organized as follows.
+
+Chapter~\ref{chap:background} introduces the relevant background and fundamental concepts required for understanding the subsequent chapters. Chapter~\ref{chap:methods} describes the proposed methods and the underlying assumptions. The obtained results are presented and analyzed in Chapter~\ref{chap:results}. A critical discussion of the findings is provided in Chapter~\ref{chap:discussion}. Finally, Chapter~\ref{chap:conclusion} concludes the thesis and outlines potential directions for future work.
