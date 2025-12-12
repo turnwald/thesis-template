@@ -1,0 +1,75 @@
+% thi-thesis.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{thi-thesis}[2025/12/12 THI thesis house style]
+
+
+
+% Option: mainlang=ngerman|english
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=THI, prefix=THI@}
+\DeclareStringOption[ngerman]{mainlang}
+\ProcessKeyvalOptions*
+
+% --- Basic encoding / language ---
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[\THI@mainlang]{babel}
+
+% --- Page geometry / spacing ---
+\RequirePackage[a4paper,margin=25mm]{geometry}
+\RequirePackage{setspace}
+\onehalfspacing
+
+% --- Graphics / tables ---
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+
+% --- Math ---
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+
+% --- Better quotes ---
+\RequirePackage{csquotes}
+
+% --- Captions ---
+\RequirePackage{caption}
+\captionsetup{
+	font=small,
+	labelfont=bf,
+	format=plain
+}
+
+% --- Hyperlinks (load late) ---
+\RequirePackage[hidelinks]{hyperref}
+
+% --- Smart references (Abb./Gl./Kap. automatisch) ---
+\RequirePackage[nameinlink,noabbrev]{cleveref}
+
+% --- Bibliography: biblatex+biber (IEEE-like numeric default) ---
+%\RequirePackage[
+%backend=biber,
+%style=ieee,
+%citestyle=numeric,
+%sorting=none
+%]{biblatex}
+% --- Bibliography via BibTeX (robust default) ---
+\RequirePackage[numbers,sort&compress]{natbib}
+\bibliographystyle{IEEEtran}
+
+%\RequirePackage{lmodern}
+\RequirePackage{newtxtext}
+\RequirePackage{newtxmath}
+
+
+% Optional: tighten URL breaks a bit
+\RequirePackage{xurl}
+
+
+
+
+
+
+% --- House rules: avoid widows/orphans (light touch) ---
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000

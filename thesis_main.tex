@@ -1,0 +1,117 @@
+% main.tex
+\documentclass[
+12pt,
+a4paper,
+oneside,
+headsepline
+]{scrreprt}
+
+% --- metadata (edit this) ---
+\newcommand{\thesistype}{\textbf{Master Thesis}} % Bachelorarbeit / Masterarbeit
+\newcommand{\thesistitle}{Titel der Abschlussarbeit}
+\newcommand{\thesissubtitle}{Optionaler Untertitel}
+\newcommand{\thesisauthor}{Vorname Nachname}
+\newcommand{\matriculation}{123456}
+\newcommand{\studyprogram}{Studiengang}
+\newcommand{\faculty}{Fakultät für Elektro und Infromationstechnik}
+\newcommand{\university}{\textbf{Technische Hochschule Ingolstadt}}
+\newcommand{\supervisorA}{Prof. Dr.-Ing. Alen Turnwald}
+\newcommand{\supervisorB}{Zweitprüfer}
+\newcommand{\supervisorC}{Betreuer (Optional)}
+\newcommand{\admissiondate}{01.01.2030}
+\newcommand{\submissiondate}{01.01.2030}
+\newcommand{\place}{Ingolstadt}
+
+% Language switch (ngerman / english)
+%\newcommand{\mainlang}{ngerman}  % Detsch
+\newcommand{\mainlang}{english} % English
+
+% --- load house style (all packages live here) ---
+\usepackage[mainlang=\mainlang]{thi-thesis}
+
+
+\begin{document}
+	
+	% -----------------------------
+	% Title page
+	% -----------------------------
+	\begin{titlepage}
+		\thispagestyle{empty}
+		\begin{center}
+			
+			\includegraphics[width=0.35\textwidth]{fig/logo.png}\par
+			\vspace{1.2cm}
+			
+			{\Large \university\par}
+			\vspace{0.2cm}
+			{\large \faculty\par}
+			\vspace{1.5cm}
+			
+			{\Large \thesistype\par}
+			\vspace{1.2cm}
+			
+			{\huge \bfseries \thesistitle\par}
+			\vspace{0.4cm}
+			{\Large \thesissubtitle\par}
+			\vspace{1.5cm}
+			
+			
+			\begin{tabular}{@{}ll@{}}
+				Autor: & \thesisauthor \\
+				Matrikelnummer: & \matriculation \\
+				Studiengang: & \studyprogram \\
+				Erstprüfer: & \supervisorA \\
+				Zweitprüfer: & \supervisorB \\
+				Betreuer: & \supervisorC \\
+				Ausgabedatum: & \submissiondate \\
+				Abgabedatum: & \submissiondate \\
+			\end{tabular}
+			
+			\vfill
+%			{\place\par}
+			
+		\end{center}
+	\end{titlepage}
+	
+	% -----------------------------
+	% Front matter
+	% -----------------------------
+	\pagenumbering{Roman}
+	
+	\input{etc/abstract.tex}
+
+	
+%	\input{etc/declaration_DE.tex}
+	% oder:
+	 \input{etc/declaration_EN.tex}
+	
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\clearpage
+	
+	% -----------------------------
+	% Main matter
+	% -----------------------------
+	\pagenumbering{arabic}
+	
+	\input{chap/01_introduction.tex}
+	\input{chap/02_background.tex}
+	\input{chap/03_methods.tex}
+	\input{chap/04_results.tex}
+	\input{chap/05_discussion.tex}
+	
+	% -----------------------------
+	% Bibliography
+	% -----------------------------
+	\clearpage
+	\bibliography{references}
+%	\printbibliography
+	
+	% -----------------------------
+	% Appendix
+	% -----------------------------
+	\appendix
+%	\input{chapters/A_appendix.tex}
+	
+\end{document}
