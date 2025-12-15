@@ -3,7 +3,9 @@
 12pt,
 a4paper,
 oneside,
-headsepline
+headsepline,
+bibliography=totoc,
+listof=totoc
 ]{scrreprt}
 
 % --- metadata (edit this) ---
@@ -111,7 +113,14 @@ headsepline
 	% -----------------------------
 	% Appendix
 	% -----------------------------
+%	\clearpage
+	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+	\addchap{\appendixname}
 	\appendix
-%	\input{chapters/A_appendix.tex}
+	\input{chap/A_appendix.tex}
+	\setcounter{tocdepth}{1}   % restore (chapters + sections) if needed later
+	% Restore ToC depth afterwards (if anything follows)
+	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
 	
 \end{document}

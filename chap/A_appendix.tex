@@ -1,0 +1,45 @@
+\chapter{Proof of a Stability Property}
+
+This appendix provides a concise proof sketch of a generic stability property that is representative of the type of technical material commonly placed in an appendix. The result is not central to the main argument of the thesis, but supports statements made in the main text.
+
+\section{Problem Setting}
+
+Consider a discrete-time dynamical system of the form
+\begin{equation}
+	x_{k+1} = f(x_k),
+	\label{eq:appendix_system}
+\end{equation}
+with equilibrium point $x^\star = 0$, such that $f(0) = 0$. Assume that the function $f(\cdot)$ is locally Lipschitz continuous in a neighborhood of the origin.
+
+\section{Lyapunov Function Candidate}
+
+Let $V : \mathbb{R}^n \rightarrow \mathbb{R}_{\ge 0}$ be a continuously differentiable function satisfying
+\begin{align}
+	V(0) &= 0, \\
+	V(x) &> 0 \quad \forall x \neq 0.
+\end{align}
+
+Furthermore, assume that there exists a constant $\alpha > 0$ such that
+\begin{equation}
+	V(f(x)) - V(x) \le -\alpha \|x\|^2
+	\label{eq:lyapunov_decrease}
+\end{equation}
+holds for all $x$ in a neighborhood of the origin.
+
+\section{Proof Sketch}
+
+From inequality~\eqref{eq:lyapunov_decrease} it follows that the Lyapunov function strictly decreases along system trajectories, except at the equilibrium point. Summing~\eqref{eq:lyapunov_decrease} over $k = 0, \ldots, N-1$ yields
+\begin{equation}
+	V(x_N) - V(x_0) \le -\alpha \sum_{k=0}^{N-1} \|x_k\|^2.
+\end{equation}
+
+Since $V(x)$ is nonnegative by construction, the sequence $\{V(x_k)\}$ is monotonically decreasing and bounded from below. Consequently, $\sum_{k=0}^{\infty} \|x_k\|^2$ is finite, which implies
+\begin{equation}
+	\lim_{k \to \infty} x_k = 0.
+\end{equation}
+
+Thus, the equilibrium point $x^\star = 0$ is locally asymptotically stable.
+
+\section{Remark}
+
+The assumptions made in this appendix are intentionally generic. Similar arguments can be found in standard textbooks on nonlinear systems and control theory, and the presented proof serves primarily as an illustrative example of how auxiliary theoretical results can be documented in an appendix.
